@@ -3,14 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Computers;
 use App\Models\Products;
 use App\Models\Category;
 use App\Models\SubCategory;
 
 class ProductController extends Controller
 {
+    public function home() {
+        $computers = Products::all();
+        return view('welcome',[
+            'computers' => $computers,
+        ]);
+    }
+
     public function index() {
-        return view('admin.products.index');
+        $products = Products::all();
+        return view('admin.products.index',[
+            'products' => $products,
+        ]);
+
     }
 
     public function create() {

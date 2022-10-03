@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ComputerController;
 use App\Http\Controllers\ProductController;
+use App\Models\Computers;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,16 +16,9 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ComputerController::class, 'index'])->name("welcome");
+Route::get('/computers/hydra', [ComputerController::class, 'computerindex'])->name("computers.hydra.index");
 
-Route::get('/admin/products', [ProductController::class, 'index'])->middleware(['auth'])->name("admin.products.index");
-Route::get('/admin/products/create', [ProductController::class, 'create'])->middleware(['auth']);
-Route::post('/admin/products', [ProductController::class, 'store'])->middleware(['auth'])->name("admin.products.store");
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-require __DIR__.'/auth.php';
+Route::get('/admin/products', [ProductController::class, 'index'])->name("admin.products.index");
+Route::get('/admin/products/create', [ProductController::class, 'create']);
+Route::post('/admin/products', [ProductController::class, 'store'])->name("admin.products.store");
