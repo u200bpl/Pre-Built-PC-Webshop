@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ComputerController;
-use App\Http\Controllers\ProductController;
-use App\Models\Computers;
+use App\Http\Controllers\ProcessorController;
+use App\Models\Computer;
+use App\Models\Processor;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +18,10 @@ use App\Models\Computers;
 */
 
 Route::get('/', [ComputerController::class, 'index'])->name("welcome");
-Route::get('/computers/hydra', [ComputerController::class, 'computerindex'])->name("computers.hydra.index");
+Route::get('/computers', [ComputerController::class, 'show'])->name("computers.index");
 
-Route::get('/admin/products', [ProductController::class, 'index'])->name("admin.products.index");
-Route::get('/admin/products/create', [ProductController::class, 'create']);
-Route::post('/admin/products', [ProductController::class, 'store'])->name("admin.products.store");
+Route::get('/admin/computers', [ComputerController::class, 'admin'])->name("admin.computers.index");
+Route::get('/admin/computers/create', [ComputerController::class, 'create']);
+Route::post('/admin/computers', [ComputerController::class, 'store'])->name("admin.computers.store");
+
+Route::get('/computers/{id}', [ComputerController::class, 'detail'])->name("layouts.detail");

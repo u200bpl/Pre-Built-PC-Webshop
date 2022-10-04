@@ -9,7 +9,7 @@
     <script src="https://kit.fontawesome.com/268c8277db.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{asset('style/style.css')}}">
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css'>      
-
+    
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
@@ -25,7 +25,9 @@
                     <div class="dropdown">
                         <button class="dropbtn"><i class="fa-solid fa-computer"></i> Computers</button>
                         <div class="dropdown-content">
-                            <a href="/computers/hydra">HYDRRA</a>
+                            @foreach ($computers as $computer)
+                                <a href="/computers/{{$computer->id}}">{{$computer->name}}</a>
+                            @endforeach
                         </div>
                     </div> 
                 </div>
@@ -41,5 +43,7 @@
     <main>
         @yield('content')
     </main>
+
+    <script src="{{asset('js/main.js')}}"></script>
 </body>
 </html>

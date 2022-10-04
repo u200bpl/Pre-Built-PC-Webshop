@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Processor extends Model
 {
     use HasFactory;
-    public function computers() {
-        return $this->hasMany(Computers::class);
+    public function computers()
+    {
+        return $this->hasMany(Computer::class);
     }
 }

@@ -20,10 +20,10 @@
     <div class="wrapper">
         <div class="card-section-flex">
             @foreach ($computers as $computer)
-            <a href="/{{$computer->name}}">
+            <a href="/computers/{{$computer->id}}">
                 <div class="card">
                     <div class="card-image">
-                        <img src="{{$computer->img}}" alt="Computer img">
+                        <img src="/img/{{$computer->img}}" alt="Computer img">
                     </div>
                     <div class="card-text">
                         <h3>{{$computer->name}}</h3>
@@ -32,10 +32,10 @@
                     </div>
 
                     <div class="cards-components">
-                        <p><i class='bi bi-cpu'></i> <b>CPU:</b> {{ $computer->processor->name }}</p>
-                        <p><i class='bi bi-gpu-card'></i> <b>GPU:</b> {{$computer->video_card_id}}</p>
-                        <p><i class="bi bi-memory"></i> <b>RAM:</b> {{$computer->memory_id}}</p>
-                        <p><i class="bi bi-hdd"></i> <b>Storage:</b> {{$computer->storage_id}}</p>
+                        <p><i class='bi bi-cpu'></i> <b>CPU:</b> {{$computer->processor->name}}</p>
+                        <p><i class='bi bi-gpu-card'></i> <b>GPU:</b> {{$computer->graphicscard->name}}</p>
+                        <p><i class="bi bi-memory"></i> <b>RAM:</b> {{$computer->ram->name}}</p>
+                        <p><i class="bi bi-hdd"></i> <b>Storage:</b> </p>
 
                         <button>See Full Pc Information</button>
                     </div>

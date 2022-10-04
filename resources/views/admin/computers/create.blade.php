@@ -4,7 +4,7 @@
 
 <div class="container">
     <h1>Create new product</h1>
-    <form action="{{route('admin.products.store')}}" method="POST">
+    <form action="{{route('admin.computers.store')}}" method="POST">
         @csrf
         <div class="form-group">
             <label for="name">Name</label>

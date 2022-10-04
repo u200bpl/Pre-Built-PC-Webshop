@@ -1,30 +1,15 @@
-@extends('layouts.base')
-@section('content')
+    @extends('layouts.base')
 
-<section class="hero">
-    <div class="wrapper">
-        <div class="here-content">
-            <div class="hero-text">
-                <div class="sub-slogan">
-                    <p>Welcom to The Company</p>
-                </div>
-                <h2>The <span>Best PCs</span> in the Universe</h2>
-                <p>Because the games are worth it!</p>
-                <a href="">Find your system</a>
-            </div>
-        </div>
-    </div>
-</section>
+    @section('content')
 
-<section class="card-section">
+    <section class="card-section">
     <div class="card-section-header">
-        <h2>Featured Gaming PCs</h2>
-        <a href="/computers">Store <i class="fa-solid fa-arrow-right-long"></i></a>
+        <h2>Gaming PCs</h2>
     </div>
     <div class="wrapper">
         <div class="card-section-flex">
-            @foreach ($computers->take(4) as $computer)
-            <a href="/computers/{{$computer->id}}">
+            @foreach ($computers as $computer)
+            <a href="/{{$computer->id}}">
                 <div class="card">
                     <div class="card-image">
                         <img src="../img/{{$computer->img}}" alt="Computer img">
@@ -34,7 +19,7 @@
                         <p>{{$computer->description}}</p>
                         <p class="card-section-price">€{{$computer->price}}</p>
                     </div>
-
+                    
                     <div class="cards-components">
                         <button>See Full Pc Information</button>
                     </div>
@@ -45,4 +30,4 @@
     </div>
 </section>
 
-@endsection
+    @endsection
