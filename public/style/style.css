@@ -206,7 +206,7 @@ nav {
 }
 
 .card-image {
-    background-color: var(--main2);
+    /* background-color: var(--main2); */
     padding: 25px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -215,13 +215,11 @@ nav {
 .card-text {
     width: 100%;
     padding: 25px;
-    background-color: var(--main3);
-    border-top: 1px var(--main-color) solid;
-    border-bottom: 1px var(--main-color) solid;
+    /* background-color: var(--main3); */
 }
 
 .card:hover {
-    cursor: default;
+    cursor: pointer;
     border-radius: 10px;
     border: 1px var(--main-color) solid;
 }
@@ -237,8 +235,8 @@ nav {
 
 hr {
     margin: 5px 5px;
-    border: none;
-    border-top: 1px solid var(--main-color);
+    border: 1px solid var(--main-color);
+    width: 100%;
 }
 
 .cards-components {

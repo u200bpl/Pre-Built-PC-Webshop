@@ -29,14 +29,11 @@
                     <div class="card-image">
                         <img src="../img/{{$computer->img}}" alt="Computer img">
                     </div>
+                    <hr>
                     <div class="card-text">
                         <h3>{{$computer->name}}</h3>
                         <p>{{$computer->description}}</p>
                         <p class="card-section-price">€{{$computer->price}}</p>
-                    </div>
-
-                    <div class="cards-components">
-                        <button>See Full Pc Information</button>
                     </div>
                 </div>
             </a>
