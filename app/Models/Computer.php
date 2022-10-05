@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Computer extends Model
 {
     use HasFactory;
+    protected $guarded = [];
+
     public function pccase() {
         return $this->belongsTo(Pccase::class);
     }
@@ -30,5 +32,13 @@ class Computer extends Model
 
     public function ram() {
         return $this->belongsTo(Ram::class);
+    }
+
+    public function storage() {
+        return $this->belongsTo(Storage::class);
+    }
+
+    public function psu() {
+        return $this->belongsTo(Psu::class);
     }
 }

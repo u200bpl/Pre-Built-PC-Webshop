@@ -11,7 +11,9 @@
     --main3: #2d2d2f;
     --white: #fff;
     --black: #000;
-    --red: #fa3232;
+    --red: #ff5a5a;
+    --orange: #ffc55a;
+    --green: #62ff5a;
 }
 
 * {
@@ -29,6 +31,19 @@ body {
 .wrapper {
     width: 60%;
     margin: 0 auto;
+}
+
+.alert-danger {
+    background-color: #ff5a5aa9;
+    border: #ff5a5aa9 1px solid;
+    color: var(--white);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.alert-danger ul {
+    padding: 0 15px;
 }
 
 nav {
@@ -214,7 +229,7 @@ nav {
 
 .card-text {
     width: 100%;
-    padding: 25px;
+    padding: 25px 0;
     /* background-color: var(--main3); */
 }
 
@@ -225,7 +240,7 @@ nav {
 }
 
 .card-text p {
-    font-size: 18px;
+    font-size: var(--main-font);
 }
 
 .card-section-price {
@@ -244,8 +259,11 @@ hr {
     border-bottom-right-radius: 10px;
     max-width: 315px;
     width: 100%;
-    padding: 25px;
-    background-color: var(--main3); 
+    
+}
+
+.cards-components {
+    color: var(--black);
 }
 
 .cards-components p {
@@ -296,10 +314,9 @@ hr {
     border: none;
     text-align: left;
     outline: none;
-    font-size: 15px;
+    font-size: var(--main-font2);
     transition: 0.4s;
-    border-bottom: #BDF9A1 1px solid;
-    
+    border-top: var(--main-color) 1px solid;   
 }
   
 .panel {
@@ -317,4 +334,57 @@ hr {
   
 .active:after {
     content: "\2212";
+}
+
+.detail-components button {
+    cursor: pointer;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: var(--main-color);
+    border: none;
+    color: var(--black);
+    font-family: var(--main-font2);
+    font-size: 15px;
+    width: 100%;
+}
+
+.detail-header {
+    margin-bottom: 15px;
+}
+
+.detail-header p {
+    color: var(--main-color);
+    font-family: var(--main-font2);
+}
+
+/* ADMIN SECTION */
+.admin-card {
+    margin: 10px;
+}
+.cards-admin a {
+    text-decoration: none;
+    color: var(--black);
+    font-size: 15px;
+    font-family: var(--main-font2);
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.btn-del {
+    background-color: var(--red);
+}
+
+.btn-chg {
+    background-color: var(--orange);
+}
+
+.btn-view {
+    background-color: var(--green);
+}
+
+.card-create {
+    border: lightgrey 3px solid;
+    padding: 100px;
+    font-size: 30px;
+    border-radius: 10px;   
 }

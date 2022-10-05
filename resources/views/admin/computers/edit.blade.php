@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="wrapper">
-    <h1>Create new PC</h1>
+    <h1>Change {{$computer->name}} Configuration</h1>
     @if($errors->any())
         <div class="alert-danger">
             <ul>
@@ -13,11 +13,12 @@
             </ul>
         </div>
     @endif
-    <form action="{{route('admin.computers.store')}}" method="POST">
+    <form action="{{route('admin.computers.update', $computer->id)}}" method="POST">
         @csrf
+        @method("PUT")
         <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" name="name" id="name" class="form-control">
+            <input value="{{$computer->name}}" type="text" name="name" id="name" class="form-control">
         </div>
             
         <div class="form-group">
@@ -97,7 +98,13 @@
             <input type="number" name="price" id="price" class="form-control">
         </div>
 
-        <button type="submit" class="btn btn-primary mt-2">Create Product</button>
+        <button type="submit" class="btn btn-primary mt-2">Save Changes</button>
+    </form>
+
+    <form action="{{route('admin.computers.destroy', $computer->id)}}" method="post">
+        @csrf
+        @method('DELETE')
+        <input type="submit" value="Delete" class="btn btn-danger">
     </form>
 </div>
 

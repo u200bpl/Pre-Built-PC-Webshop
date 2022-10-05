@@ -25,3 +25,7 @@ Route::get('/admin/computers/create', [ComputerController::class, 'create']);
 Route::post('/admin/computers', [ComputerController::class, 'store'])->name("admin.computers.store");
 
 Route::get('/computers/{id}', [ComputerController::class, 'detail'])->name("layouts.detail");
+Route::get('/admin/computers/{id}', [ComputerController::class, 'adminDetail'])->name("layouts.detail");
+Route::get('/admin/computers/{id}/edit', [ComputerController::class, 'edit'])->name("admin.computers.edit");
+Route::put('/admin/computers/{id}/edit', [ComputerController::class, 'update'])->name("admin.computers.update");
+Route::delete('/admin/computers/{id}', [ComputerController::class, 'destroy'])->name('admin.computers.destroy');

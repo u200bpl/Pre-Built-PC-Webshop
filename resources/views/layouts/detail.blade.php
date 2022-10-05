@@ -5,30 +5,42 @@
     <div class="wrapper">
         <div class="detail-flex">
             <div class="detail-img">
-                <img src="../img/{{$computer->img}}" alt="{{$computer->name}} Computer img">
+                <img src="{{asset('img/' . $computer->img . '.png')}}" alt="{{$computer->name}} Computer img">
             </div>
-
+            
             
             <div class="detail">
-                <h1>{{$computer->name}}</h1>
+                <div class="detail-header">
+                    <h1>{{$computer->name}}</h1>
+                    <p>€{{$computer->price}}</p>
+                </div>
 
-                <button class="accordion">Information</button>
+                <button class="accordion"><b>Information</b></button>
                 <div class="panel">
                     <p>{{$computer->description}}</p>
                 </div>
 
-                <button class="accordion">Computer Specifactions</button>
+                <button class="accordion"><b>Computer Specifactions</b></button>
                 <div class="panel">
-                    <p><i class="bi bi-pc"></i> <b>Case:</b> {{$computer->pccase->name}}</p>
-                    <p><i class="bi bi-motherboard"></i> <b>Motherboard:</b> {{$computer->motherboard->name}}</p>
-                    <p><i class='bi bi-cpu'></i> <b>CPU:</b> {{$computer->processor->name}}</p>
-                    <p><i class="bi bi-fan"></i> <b>CPU Cooler:</b> {{$computer->cpucooler->name}}</p>
-                    <p><i class="bi bi-memory"></i> <b>RAM:</b> {{$computer->ram->name}}</p>
-                    <p><i class='bi bi-gpu-card'></i> <b>GPU:</b> {{$computer->graphicscard->name}}</p>
-                    <p><i class="bi bi-hdd"></i> <b>Storage:</b> </p>
-                    <p><i class="bi bi-plug"></i> <b>PSU:</b> </p>
-                    <p><i class="bi bi-windows"></i> <b>OS:</b> </p>
-                    <p><i class="bi bi-exclamation-triangle"></i> <b>Warranty:</b> </p>
+                    <p><b>Case:</b> {{$computer->pccase->name}}</p>
+                    <p><b>CPU:</b> {{$computer->processor->name}}</p>
+                    <p><b>GPU:</b> {{$computer->graphicscard->name}}</p>
+                    <p><b>Motherboard:</b> {{$computer->motherboard->name}}</p>
+                    <p><b>CPU Cooler:</b> {{$computer->cpucooler->name}}</p>
+                    <p><b>RAM:</b> {{$computer->ram->name}}</p>
+                    <p><b>Storage:</b> {{$computer->storage->name}}</p>
+                    <p><b>PSU:</b> {{$computer->psu->name}}</p>
+                    <p><b>OS:</b> Windows 11 Pro</p>
+                    <p><b>Warranty:</b> 2 Years</p>
+                </div>
+
+                <button class="accordion"><b>Warranty Information</b></button>
+                <div class="panel">
+                    <p>{{$computer->description}}</p>
+                </div>
+
+                <div class="detail-components">
+                    <button><b>Add to card</b> - €{{$computer->price}}</button>
                 </div>
             </div>
         </div>

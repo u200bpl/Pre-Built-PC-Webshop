@@ -25,6 +25,10 @@ return new class extends Migration
             $table->foreignId('pccase_id')->references('id')->on('pccases');
             $table->foreignId('motherboard_id')->references('id')->on('motherboards');
             $table->foreignId('cpucooler_id')->references('id')->on('cpucoolers');
+            $table->foreignId('storage_id')->references('id')->on('storages');
+            $table->foreignId('psu_id')->references('id')->on('psus');
+            $table->string('os')->nullable();
+            $table->string('warranty')->nullable();
             $table->timestamps();
         });
     }

@@ -8,7 +8,8 @@
 
     <script src="https://kit.fontawesome.com/268c8277db.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{asset('style/style.css')}}">
-    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css'>      
+
+    <script src="https://kit.fontawesome.com/268c8277db.js" crossorigin="anonymous"></script>
     
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -23,7 +24,7 @@
                 <div class="nav-links">
                     <a href="/"><i class="fa-solid fa-house"></i> Home</a>
                     <div class="dropdown">
-                        <button class="dropbtn"><i class="fa-solid fa-computer"></i> Computers</button>
+                        <button class="dropbtn"><i class="fa-solid fa-computer"></i> Gaming PCs</button>
                         <div class="dropdown-content">
                             @foreach ($computers as $computer)
                                 <a href="/computers/{{$computer->id}}">{{$computer->name}}</a>

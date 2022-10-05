@@ -6,7 +6,7 @@
         <div class="here-content">
             <div class="hero-text">
                 <div class="sub-slogan">
-                    <p>Welcom to The Company</p>
+                    <p>Welcom to Hydra PCs</p>
                 </div>
                 <h2>The <span>Best PCs</span> in the Universe</h2>
                 <p>Because the games are worth it!</p>
@@ -27,12 +27,11 @@
             <a href="/computers/{{$computer->id}}">
                 <div class="card">
                     <div class="card-image">
-                        <img src="../img/{{$computer->img}}" alt="Computer img">
+                        <img src="{{asset('img/' . $computer->img . '.png')}}" alt="Computer img">
                     </div>
                     <hr>
                     <div class="card-text">
                         <h3>{{$computer->name}}</h3>
-                        <p>{{$computer->description}}</p>
                         <p class="card-section-price">€{{$computer->price}}</p>
                     </div>
                 </div>
