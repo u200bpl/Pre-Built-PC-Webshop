@@ -5,7 +5,11 @@
     <div class="wrapper">
         <div class="detail-flex">
             <div class="detail-img">
-                <img src="{{asset('img/' . $computer->img . '.png')}}" alt="{{$computer->name}} Computer img">
+                @if($computer->img)
+                    <img src="{{asset('img/' . $computer->img . '.png')}}" alt="{{$computer->name}} Computer img">
+                @else
+                    <img src="{{asset('img/no-img-found.png')}}" alt="">
+                @endif
             </div>
             
             
@@ -30,8 +34,8 @@
                     <p><b>RAM:</b> {{$computer->ram->name}}</p>
                     <p><b>Storage:</b> {{$computer->storage->name}}</p>
                     <p><b>PSU:</b> {{$computer->psu->name}}</p>
-                    <p><b>OS:</b> Windows 11 Pro</p>
-                    <p><b>Warranty:</b> 2 Years</p>
+                    <p><b>OS:</b> {{$computer->os}}</p>
+                    <p><b>Warranty:</b> {{$computer->warranty}}</p>
                 </div>
 
                 <button class="accordion"><b>Warranty Information</b></button>

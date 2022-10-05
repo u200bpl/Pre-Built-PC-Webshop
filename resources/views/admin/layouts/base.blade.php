@@ -55,7 +55,26 @@
         </div>
     </nav>
 
-    <main>
+    <div class="sidenav">
+        <p><span><i class="fa-solid fa-microchip"></i></span> PC Components</p>
+        <a href=""><span><i class="fa-solid fa-chevron-right"></i></span> PC Cases</a>
+        <a href=""><span><i class="fa-solid fa-chevron-right"></i></span> Processors</a>
+        <a href=""><span><i class="fa-solid fa-chevron-right"></i></span> Graphics Cards</a>
+        <a href=""><span><i class="fa-solid fa-chevron-right"></i></span> Motherboards</a>
+        <a href=""><span><i class="fa-solid fa-chevron-right"></i></span> Processor Coolers</a>
+        <a href=""><span><i class="fa-solid fa-chevron-right"></i></span> Ram</a>
+        <a href=""><span><i class="fa-solid fa-chevron-right"></i></span> Storage</a>
+        <a href=""><span><i class="fa-solid fa-chevron-right"></i></span> Power Suplys</a>
+        <hr>
+        <p><span><i class="fa-solid fa-computer"></i></span> Gaming PCs</p>
+        <a href="/admin/computers/create"><span><i class="fa-solid fa-plus"></i></span> Create PC</a>
+
+        @foreach ($computers as $computer)
+            <a href="/admin/computers/{{$computer->id}}"><span><i class="fa-solid fa-chevron-right"></i></span> {{$computer->name}}</a>
+        @endforeach
+    </div>
+
+    <main class="main">
         @yield('content')
     </main>
 

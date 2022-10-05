@@ -24,18 +24,24 @@
     <div class="wrapper">
         <div class="card-section-flex">
             @foreach ($computers->take(4) as $computer)
-            <a href="/computers/{{$computer->id}}">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="{{asset('img/' . $computer->img . '.png')}}" alt="Computer img">
+                @if($computer->is_active)
+                <a href="/computers/{{$computer->id}}">
+                    <div class="card">
+                        <div class="card-image">
+                            @if($computer->img)
+                                <img src="{{asset('img/' . $computer->img . '.png')}}" alt="Computer img">
+                            @else
+                                <img src="{{asset('img/no-img-found.png')}}" alt="">
+                            @endif
+                        </div>
+                        <hr>
+                        <div class="card-text">
+                            <h3>{{$computer->name}}</h3>
+                            <p class="card-section-price">€{{$computer->price}}</p>
+                        </div>
                     </div>
-                    <hr>
-                    <div class="card-text">
-                        <h3>{{$computer->name}}</h3>
-                        <p class="card-section-price">€{{$computer->price}}</p>
-                    </div>
-                </div>
-            </a>
+                </a>
+                @endif
             @endforeach
         </div>
     </div>

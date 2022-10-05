@@ -21,6 +21,12 @@ class ComputerController extends Controller
         ]);
     }
 
+    public function adminView(){
+        return view('admin.index', [
+            'computers' => Computer::all()
+        ]);
+    }
+
     public function show(){
         return view('computers.index', [
             'computers' => Computer::all(),
@@ -36,7 +42,7 @@ class ComputerController extends Controller
     }
 
     public function admin(){
-        return view('admin.computers.index', [
+        return view('admin.index', [
             'computers' => Computer::all()
         ]);
     }
@@ -66,6 +72,7 @@ class ComputerController extends Controller
     public function store(Request $request){
         $request->validate([
             'name' => 'required|max:255|min:3|unique:computers',
+            'description' => 'required',
             'pccase_id' => 'required',
             'processor_id' => 'required',
             'graphicscard_id' => 'required',
@@ -78,7 +85,7 @@ class ComputerController extends Controller
         ]);
 
         Computer::create($request->except('_token'));
-        return redirect()->route('admin.computers.index');
+        return redirect()->route('admin.index');
     }
 
     public function edit($id) {
@@ -123,12 +130,12 @@ class ComputerController extends Controller
         $computer->price = $request->price;
         $computer->save();
 
-        return back();
+        return redirect()->route('admin.index');
     }
 
     public function destroy($id) {
         Computer::destroy($id);
-        return redirect()->route('admin.computers.index');
+        return redirect()->route('admin.index');
     }
 
 }

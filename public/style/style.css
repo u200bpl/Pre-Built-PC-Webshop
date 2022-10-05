@@ -57,7 +57,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* padding: 15px; */
+    padding: 15px;
 }
 
 .navbar a {
@@ -72,6 +72,26 @@ nav {
 
 .nav-links {
     font-family: var(--main-font2);
+}
+
+.nav-right {
+    display: flex;
+    font-family: var(--main-font);
+}
+
+.nav-right > .dropdown > .dropbtn {
+    font-family: var(--main-font);
+}
+
+.nav-btn {
+    border: none;
+    background: transparent;
+    font-size: 16px;
+}
+
+.nav-right button:hover {
+    cursor: pointer;
+    color: var(--main-color);
 }
 
 .nav-links i {
@@ -102,7 +122,21 @@ nav {
   
 .dropdown-content a {
     color: var(--white);
-    padding: 12px 16px;
+    padding: 6px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content p {
+    color: var(--white);
+    padding: 6px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content button {
+    color: var(--white);
+    padding: 6px 16px;
     text-decoration: none;
     display: block;
 }
@@ -165,6 +199,9 @@ nav {
 }
 .card-section img {
     height: 300px;
+    width: 280px;
+    max-height: 300px;
+    max-width: 280px;
 }
 
 .card-section a {
@@ -221,7 +258,6 @@ nav {
 }
 
 .card-image {
-    /* background-color: var(--main2); */
     padding: 25px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -230,7 +266,6 @@ nav {
 .card-text {
     width: 100%;
     padding: 25px 0;
-    /* background-color: var(--main3); */
 }
 
 .card:hover {
@@ -357,7 +392,55 @@ hr {
     font-family: var(--main-font2);
 }
 
-/* ADMIN SECTION */
+/* ADMIN NAVBAR */
+.sidenav {
+    height: 100%;
+    width: 210px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+    font-size: 16px;
+}
+
+.sidenav span {
+    color: var(--main-color);
+}
+  
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    color: var(--white);
+    display: block;
+}
+
+.sidenav p {
+    padding: 6px 8px 6px 16px;
+    font-size: 20px;
+}
+  
+.sidenav a:hover {
+    color: var(--main-color);
+}
+
+.sidenav hr {
+    width: 95%;
+}
+  
+.main {
+    margin-left: 210px; /* Same as the width of the sidenav */
+    padding: 0px 10px;
+}
+  
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+/* ADMIN COMPUTERS SECTION */
 .admin-card {
     margin: 10px;
 }
@@ -372,14 +455,17 @@ hr {
 
 .btn-del {
     background-color: var(--red);
+    width: 100px;
 }
 
 .btn-chg {
     background-color: var(--orange);
+    width: 100px;
 }
 
 .btn-view {
     background-color: var(--green);
+    width: 100px;
 }
 
 .card-create {
@@ -387,4 +473,102 @@ hr {
     padding: 100px;
     font-size: 30px;
     border-radius: 10px;   
+}
+
+.cards-admin {
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+.cards-admin input {
+    width: 100px;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: var(--red);
+    padding: 10px;
+    font-family: var(--main-font2);
+    color: var(--black);
+}
+
+/* CREATE FORM */
+.create-form {
+    text-align: center;
+}
+
+.create-form > form {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    flex-wrap: wrap;
+}
+
+.form-group > input[type=submit] {
+    cursor: pointer;
+    width: 100%;
+    background-color: var(--red);
+    padding: 10px;
+    margin: 0;
+    color: var(--black);
+    margin: -25px 0;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 45%;
+    padding: 10px;
+    margin: 10px;
+    font-size: 23px;
+}
+
+.form-group > input {
+    background-color: transparent;
+    border: none;
+    color: var(--white);
+    margin: 0 0 0 10px;
+    font-size: 19px;
+}
+
+.form-group > select {
+    background-color: transparent;
+    border: none;
+    color: var(--white);
+    margin: 0 0 0 5px;
+    overflow-y: hidden;
+    width: 100%;
+    font-size: 19px;
+}
+
+.form-group > textarea {
+    background-color: transparent;
+    border: none;
+    color: var(--white);
+    margin: 0 0 0 5px;
+    overflow-y: hidden;
+    width: 100%;
+    font-size: 19px;
+}
+
+.form-group > select > option {
+    color: var(--black);
+}
+
+.form-group > select > option:hover {
+    color: var(--main);    
+}
+
+.form-group > button {
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    background-color: var(--main-color);
+    font-size: 19px;
 }

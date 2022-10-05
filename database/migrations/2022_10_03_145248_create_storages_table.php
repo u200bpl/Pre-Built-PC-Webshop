@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->string('description')->nullable();
-            $table->float('price');
+            $table->float('price')->nullable();
             $table->timestamps();
         });
     }

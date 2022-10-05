@@ -22,7 +22,7 @@ Route::get('/computers', [ComputerController::class, 'show'])->name("computers.i
 
 Route::get('/computers/{id}', [ComputerController::class, 'detail'])->name("layouts.detail");
 
-Route::get('/admin/computers', [ComputerController::class, 'admin'])->name("admin.computers.index")->middleware('auth');
+Route::get('/admin', [ComputerController::class, 'adminView'])->name("admin.index");
 Route::get('/admin/computers/create', [ComputerController::class, 'create'])->middleware('auth');
 Route::post('/admin/computers', [ComputerController::class, 'store'])->name("admin.computers.store")->middleware('auth');
 
@@ -30,9 +30,5 @@ Route::get('/admin/computers/{id}', [ComputerController::class, 'adminDetail'])-
 Route::get('/admin/computers/{id}/edit', [ComputerController::class, 'edit'])->name("admin.computers.edit")->middleware('auth');
 Route::put('/admin/computers/{id}/edit', [ComputerController::class, 'update'])->name("admin.computers.update")->middleware('auth');
 Route::delete('/admin/computers/{id}', [ComputerController::class, 'destroy'])->name('admin.computers.destroy')->middleware('auth');
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 require __DIR__.'/auth.php';

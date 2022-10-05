@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->string('img')->nullable();
             $table->string('description')->nullable();
-            $table->float('price');
+            $table->float('price')->nullable();
             $table->foreignId('processor_id')->references('id')->on('processors');
             $table->foreignId('graphicscard_id')->references('id')->on('graphicscards');
             $table->foreignId('ram_id')->references('id')->on('rams');
@@ -29,6 +29,7 @@ return new class extends Migration
             $table->foreignId('psu_id')->references('id')->on('psus');
             $table->string('os')->nullable();
             $table->string('warranty')->nullable();
+            $table->boolean('is_active')->default(false);
             $table->timestamps();
         });
     }
