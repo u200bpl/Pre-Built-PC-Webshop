@@ -10,6 +10,10 @@ class Computer extends Model
     use HasFactory;
     protected $guarded = [];
 
+    public function order() {
+        return $this->hasMany(Order::class);
+    }
+
     public function pccase() {
         return $this->belongsTo(Pccase::class);
     }

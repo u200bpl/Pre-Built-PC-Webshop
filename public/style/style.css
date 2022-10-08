@@ -9,10 +9,12 @@
     --main: #1C1B22;
     --main2: #28272d;
     --main3: #2d2d2f;
+    --main4: #111;
     --white: #fff;
     --black: #000;
     --red: #ff5a5a;
     --orange: #ffc55a;
+    --blue: #5ac3ff;
     --green: #62ff5a;
 }
 
@@ -727,6 +729,11 @@ input:checked + .slider:before {
     transform: translateX(26px);
 }
 
+/* ADMIN DASHBOARD */
+.admin-section {
+    margin: 75px 0;
+}
+
 /* ADMIN STATS */
 .stats {
     display: flex;
@@ -742,8 +749,36 @@ input:checked + .slider:before {
     border-radius: 10px;
 }
 
+.pending {
+    border-left: var(--red) 5px solid;
+}
+
+.completed {
+    border-left: var(--green) 5px solid;
+}
+
+.tickets {
+    border-left: var(--blue) 5px solid;
+}
+
+.processing {
+    border-left: var(--orange) 5px solid;
+}
+
 .stats-text {
     margin: 10px;
+}
+
+.stats-text h4 {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: var(--main-font2);
+}
+
+.stats-text p {
+    text-align: center;
+    font-size: 45px;
+    margin-top: 20px;
 }
   
 /* Rounded sliders */
@@ -755,9 +790,46 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
+/* ORDER SECTION */
+
+.order-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: var(--main4);
+    border-radius: 10px;
+}
+
+.order {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 25px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    text-align: left;
+    padding: 8px;
+    width: 25%;
+}
+  
+td {
+    text-align: left;
+    padding: 8px;
+    border-top: var(--main-color) 1px solid;
+}
+
 /* FOOTER SECTION */
 footer {
-    background-color: transparent;
+    background-color: var(--main);
     color: var(--white);
     padding: 10px;
     text-align: center;

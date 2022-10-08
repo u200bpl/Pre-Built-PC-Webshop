@@ -2,39 +2,74 @@
 
     @section('content')
 
-<section class="card-section">
+<section class="">
     <div class="card-section-header">
         <h2>Admin Section</h2>
     </div>
 
     <div class="wrapper">
         <div class="stats">
-            <div class="stats-container">
+            <div class="stats-container pending">
                 <div class="stats-text">
-                    <p><i class="fa-solid fa-tags"></i> Orders:</p>
+                    <h4><i class="fa-solid fa-tags"></i> Pending Orders:</h4>
+                    <p>{{ $orders->where('status','=','pending')->count() }}</p>
                 </div>
             </div>
 
-            <div class="stats-container">
+            <div class="stats-container processing">
                 <div class="stats-text">
-                    <p><i class="fa-solid fa-tags"></i> Tickets:</p>
+                    <h4><i class="fa-solid fa-tags"></i> Processing Orders:</h4>
+                    <p>{{ $orders->where('status','=','processing')->count() }}</p>
                 </div>
             </div>
 
-            <div class="stats-container">
+            <div class="stats-container completed">
                 <div class="stats-text">
-                    <p><i class="fa-solid fa-tags"></i> Gaming PCs:</p>
+                    <h4><i class="fa-solid fa-tags"></i> Completed Orders:</h4>
+                    <p>{{ $orders->where('status','=','completed')->count() }}</p>
                 </div>
             </div>
 
-            <div class="stats-container">
+            <div class="stats-container tickets">
                 <div class="stats-text">
-                    <p><i class="fa-solid fa-tags"></i> Orders:</p>
+                    <h4><i class="fa-solid fa-tags"></i> Open Tickets:</h4>
                 </div>
             </div>
         </div>
     </div>
+</section>
 
+<section class="admin-section">
+    <div class="card-section-header">
+        <h2>Order Section</h2>
+    </div>
+
+    <div class="wrapper">
+        <div class="order-section">
+            <div class="order">
+                <table>
+                    <tr>
+                        <th>Oder ID</th>
+                        <th>User</th>
+                        <th>Gaming PC</th>
+                        <th>Status</th>
+                    </tr>
+
+                    @foreach ($orders as $order)
+                        <tr>
+                            <td>{{ $order->id }}</td>
+                            <td>{{ $order->user->first_name }} {{ $order->user->last_name }}</td>
+                            <td><a href="/computer/{{ $order->computer->id }}">{{ $order->computer->name }}</a></td>
+                            <td>{{ $order->status }}</td>
+                        </tr>
+                    @endforeach
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="card-section">
     <div class="card-section-header">
         <h2>Gaming PCs Section</h2>
     </div>

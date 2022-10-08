@@ -12,6 +12,8 @@ use App\Models\Motherboard;
 use App\Models\Cpucooler;
 use App\Models\Storage;
 use App\Models\Psu;
+use App\Models\Order;
+
 
 class AdminController extends Controller
 {
@@ -23,7 +25,8 @@ class AdminController extends Controller
     public function index()
     {
         return view('pages.admin.index', [
-            'computers' => Computer::all()
+            'computers' => Computer::all(),
+            'orders' => Order::all(),
         ]);
     }
 
