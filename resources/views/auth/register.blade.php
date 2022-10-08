@@ -323,6 +323,12 @@
             </div>
 
             <div class="form-group">
+                <label for="zip_code">Zip Code</label>
+                <hr>
+                <input type="text" name="zip_code" id="zip_code" class="form-control" placeholder="Zip Code">
+            </div>
+
+            <div class="form-group">
                 <label for="password">Password</label>
                 <hr>
                 <input type="password" name="password" id="password" class="form-control" placeholder="Password">

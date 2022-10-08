@@ -57,7 +57,7 @@
 
                     @foreach ($orders as $order)
                         <tr>
-                            <td>{{ $order->id }}</td>
+                            <td>{{ $order->order_number }}</td>
                             <td>{{ $order->user->first_name }} {{ $order->user->last_name }}</td>
                             <td><a href="/computer/{{ $order->computer->id }}">{{ $order->computer->name }}</a></td>
                             <td>{{ $order->status }}</td>

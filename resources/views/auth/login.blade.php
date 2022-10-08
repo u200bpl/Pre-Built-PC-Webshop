@@ -19,7 +19,7 @@
             </div>
 
             <div class="form-group register">
-                <input type="submit" value="Login">
+                <button>Login</button>
             </div>
         </form>
         <p>Not an account yet? <a href="/register">Register here</a></p>
