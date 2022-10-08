@@ -1,14 +1,46 @@
-    @extends('admin.layouts.base')
+    @extends('pages.admin.layouts.base')
 
     @section('content')
 
-    <section class="card-section">
+<section class="card-section">
     <div class="card-section-header">
         <h2>Admin Section</h2>
     </div>
+
+    <div class="wrapper">
+        <div class="stats">
+            <div class="stats-container">
+                <div class="stats-text">
+                    <p><i class="fa-solid fa-tags"></i> Orders:</p>
+                </div>
+            </div>
+
+            <div class="stats-container">
+                <div class="stats-text">
+                    <p><i class="fa-solid fa-tags"></i> Tickets:</p>
+                </div>
+            </div>
+
+            <div class="stats-container">
+                <div class="stats-text">
+                    <p><i class="fa-solid fa-tags"></i> Gaming PCs:</p>
+                </div>
+            </div>
+
+            <div class="stats-container">
+                <div class="stats-text">
+                    <p><i class="fa-solid fa-tags"></i> Orders:</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-section-header">
+        <h2>Gaming PCs Section</h2>
+    </div>
     <div class="wrapper">
         <div class="card-section-flex">
-            <a href="/admin/computers/create">
+            <a href="/computer/create">
                 <div class="card-create">
                     <p><i class="fa-solid fa-plus"></i></p>
                 </div>
@@ -30,9 +62,9 @@
                     </div>
                     
                     <div class="cards-admin">
-                        <a href="/admin/computers/{{$computer->id}}/edit" class="btn-chg">Change</a>
-                        <a href="/admin/computers/{{$computer->id}}" class="btn-view">View</a>
-                        <form action="{{route('admin.computers.destroy', $computer->id)}}" method="post">
+                        <a href="/computer/{{$computer->id}}/edit" class="btn-chg">Change</a>
+                        <a href="/computer/{{$computer->id}}" class="btn-view">View</a>
+                        <form action="{{route('computer.destroy', $computer->id)}}" method="post">
                             @csrf
                             @method('DELETE')
                             <input type="submit" value="Delete" class="btn-del">

@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ComputerController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProcessorController;
 use App\Models\Computer;
 use App\Models\Processor;
@@ -17,18 +19,18 @@ use App\Models\Processor;
 |
 */
 
-Route::get('/', [ComputerController::class, 'index'])->name("welcome");
-Route::get('/computers', [ComputerController::class, 'show'])->name("computers.index");
+Route::resource('computer', ComputerController::class);
+Route::get('/', [DashboardController::class, 'index'])->name("dashboard");
+Route::get('/computer', [ComputerController::class, 'index'])->name("computers.index");
 
-Route::get('/computers/{id}', [ComputerController::class, 'detail'])->name("layouts.detail");
+Route::middleware(['web', 'isAdmin'])->group(function () {
+    Route::get('/admin', [AdminController::class, 'index'])->name("admin.index");
+    Route::get('/computer/create', [ComputerController::class, 'create']);
+    Route::get('/computer/{id}/edit', [ComputerController::class, 'edit'])->name("pages.computer.edit");
+    Route::put('/computer/{id}/edit', [ComputerController::class, 'update'])->name("pages.computer.update");
+    Route::post('/admin/computer', [ComputerController::class, 'store'])->name("pages.admin.computer.store");
 
-Route::get('/admin', [ComputerController::class, 'adminView'])->name("admin.index");
-Route::get('/admin/computers/create', [ComputerController::class, 'create'])->middleware('auth');
-Route::post('/admin/computers', [ComputerController::class, 'store'])->name("admin.computers.store")->middleware('auth');
-
-Route::get('/admin/computers/{id}', [ComputerController::class, 'adminDetail'])->name("layouts.detail")->middleware('auth');
-Route::get('/admin/computers/{id}/edit', [ComputerController::class, 'edit'])->name("admin.computers.edit")->middleware('auth');
-Route::put('/admin/computers/{id}/edit', [ComputerController::class, 'update'])->name("admin.computers.update")->middleware('auth');
-Route::delete('/admin/computers/{id}', [ComputerController::class, 'destroy'])->name('admin.computers.destroy')->middleware('auth');
+    Route::delete('/admin/computer/{id}', [ComputerController::class, 'destroy'])->name('pages.admin.computer.destroy');
+});
 
 require __DIR__.'/auth.php';

@@ -15,48 +15,25 @@ use App\Models\Psu;
 
 class ComputerController extends Controller
 {
-    public function index(){
-        return view('welcome', [
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return view('pages.computer.index', [
             'computers' => Computer::all()
         ]);
     }
 
-    public function adminView(){
-        return view('admin.index', [
-            'computers' => Computer::all()
-        ]);
-    }
-
-    public function show(){
-        return view('computers.index', [
-            'computers' => Computer::all(),
-        ]);
-    }
-
-    public function detail($id){
-        $computer = Computer::findOrFail($id);
-        return view('layouts.detail', [
-            'computer' => $computer,
-            'computers' => Computer::all()
-        ]);
-    }
-
-    public function admin(){
-        return view('admin.index', [
-            'computers' => Computer::all()
-        ]);
-    }
-
-    public function adminDetail($id){
-        $computer = Computer::findOrFail($id);
-        return view('layouts.detail', [
-            'computer' => $computer,
-            'computers' => Computer::all()
-        ]);
-    }
-
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create(){
-        return view('admin.computers.create', [
+        return view('pages.computer.create', [
             'computers' => Computer::all(),
             'pccases' => Pccase::all(),
             'processors' => Processor::all(),
@@ -68,7 +45,13 @@ class ComputerController extends Controller
             'psus' => Psu::all()
         ]);
     }
-    
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request){
         $request->validate([
             'name' => 'required|max:255|min:3|unique:computers',
@@ -81,16 +64,37 @@ class ComputerController extends Controller
             'ram_id' => 'required',
             'storage_id' => 'required',
             'psu_id' => 'required',
-            'price' => 'required|numeric|min:0',
+            'price' => 'numeric|min:0',
+            'stock' => 'numeric|min:0',
         ]);
 
         Computer::create($request->except('_token'));
         return redirect()->route('admin.index');
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Computer $computer)
+    {
+        return view('pages.computer.show', [
+            'computers' => Computer::all(),
+            'computer' => $computer
+        ]);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function edit($id) {
         $computer = Computer::findOrFail($id);
-        return view('admin.computers.edit', [
+        return view('pages.computer.edit', [
             'computers' => Computer::all(),
             'pccases' => Pccase::all(),
             'processors' => Processor::all(),
@@ -103,6 +107,13 @@ class ComputerController extends Controller
         ])->with(['computer' => $computer]);
     }
 
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function update(Request $request, $id)  {
         $this->validate($request, [
             'name' => 'required|max:255|min:3',
@@ -114,11 +125,15 @@ class ComputerController extends Controller
             'ram_id' => 'required',
             'storage_id' => 'required',
             'psu_id' => 'required',
-            'price' => 'required|numeric|min:0',
+            'stock' => 'numeric|min:0',
+            'price' => 'numeric|min:0',
         ]);
 
         $computer = Computer::findOrFail($id);
         $computer->name = $request->name;
+        $computer->img = $request->img;
+        $computer->description = $request->description;
+        $computer->price = $request->price;
         $computer->pccase_id = $request->pccase_id;
         $computer->processor_id = $request->processor_id;
         $computer->graphicscard_id = $request->graphicscard_id;
@@ -127,15 +142,23 @@ class ComputerController extends Controller
         $computer->ram_id = $request->ram_id;
         $computer->storage_id = $request->storage_id;
         $computer->psu_id = $request->psu_id;
-        $computer->price = $request->price;
+        $computer->os = $request->os;
+        $computer->warranty = $request->warranty;
+        $computer->is_active = $request->is_active;
+        $computer->stock = $request->stock;
         $computer->save();
 
         return redirect()->route('admin.index');
     }
 
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function destroy($id) {
         Computer::destroy($id);
         return redirect()->route('admin.index');
     }
-
 }

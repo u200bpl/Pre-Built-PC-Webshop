@@ -16,11 +16,18 @@
             <div class="detail">
                 <div class="detail-header">
                     <h1>{{$computer->name}}</h1>
-                    <p>€{{$computer->price}}</p>
+                    <div class="detail-header-price">
+                        <p>€{{$computer->price}} Euro</p>
+                    </div>
+                    @if($computer->stock == 0)
+                        <p>Out of Stock</p>
+                    @else
+                        <p>Stock: <span>{{$computer->stock}}</span></p>
+                    @endif
                 </div>
 
-                <button class="accordion"><b>Information</b></button>
-                <div class="panel">
+                <button class="accordion active"><b>Information</b></button>
+                <div class="panel" style="display: block;">
                     <p>{{$computer->description}}</p>
                 </div>
 

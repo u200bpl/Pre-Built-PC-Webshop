@@ -30,6 +30,7 @@ return new class extends Migration
             $table->string('os')->nullable();
             $table->string('warranty')->nullable();
             $table->boolean('is_active')->default(false);
+            $table->string('stock')->nullable();
             $table->timestamps();
         });
     }
