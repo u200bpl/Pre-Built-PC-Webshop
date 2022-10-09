@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ComputerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PccasesController;
 use App\Http\Controllers\ProcessorController;
 use App\Models\Computer;
 use App\Models\Processor;
@@ -25,12 +26,18 @@ Route::get('/computer', [ComputerController::class, 'index'])->name("computers.i
 
 Route::middleware(['web', 'isAdmin'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name("admin.index");
+
     Route::get('/computer/create', [ComputerController::class, 'create']);
     Route::get('/computer/{id}/edit', [ComputerController::class, 'edit'])->name("pages.computer.edit");
     Route::put('/computer/{id}/edit', [ComputerController::class, 'update'])->name("pages.computer.update");
     Route::post('/admin/computer', [ComputerController::class, 'store'])->name("pages.admin.computer.store");
-
     Route::delete('/admin/computer/{id}', [ComputerController::class, 'destroy'])->name('pages.admin.computer.destroy');
+
+    Route::get('/admin/pccases/create', [PccasesController::class, 'create']);
+    Route::post('/admin', [PccasesController::class, 'store'])->name("pages.pccases.store");
+
+    Route::get('/admin/processor/create', [PccasesController::class, 'create']);
+    Route::post('/admin', [PccasesController::class, 'store'])->name("pages.processor.store");
 });
 
 require __DIR__.'/auth.php';

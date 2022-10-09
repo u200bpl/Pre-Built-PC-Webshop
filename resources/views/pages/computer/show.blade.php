@@ -47,7 +47,7 @@
 
                 <button class="accordion"><b>Warranty Information</b></button>
                 <div class="panel">
-                    <p>{{$computer->description}}</p>
+                    <p>Warranty Information</p>
                 </div>
 
                 <div class="detail-components">

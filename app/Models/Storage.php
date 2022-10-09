@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Storage extends Model
 {
     use HasFactory;
+    protected $guarded = [];
+    
     public function storages() {
         return $this->hasMany(Computer::class);
     }

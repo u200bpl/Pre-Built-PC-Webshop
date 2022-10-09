@@ -36,28 +36,28 @@
                     <a href="/cart"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
                     @if (Auth::check())
                         <div class="dropdown">
-                            <button class="dropbtn"><i class="fa-solid fa-user-large"></i> {{ Auth::user()->first_name }}</button>
+                            <button class="dropbtn"><span><i class="fa-solid fa-user-large"></i></span> {{ Auth::user()->first_name }}</button>
                             <div class="dropdown-content">
                                 <p><b>Welcome, {{ Auth::user()->first_name }}</b></p>
                                 <hr>
-                                <a href=""><i class="fa-solid fa-user-gear"></i> Account</a>
-                                <a href=""><i class="fa-solid fa-cart-shopping"></i> Orders</a>
+                                <a href=""><span><i class="fa-solid fa-user-gear"></i></span> Account</a>
+                                <a href=""><span><i class="fa-solid fa-cart-shopping"></i></span> Orders</a>
                                 @if(Auth::user()->isAdmin)
-                                    <a href="/admin"><i class="fa-solid fa-user-shield"></i> Admin Panel</a>
+                                    <a href="/admin"><span><i class="fa-solid fa-user-shield"></i></span> Admin Panel</a>
                                 @endif
                                 <hr>
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
-                                    <button class="nav-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                                    <button class="nav-btn"><span><i class="fa-solid fa-right-from-bracket"></i></span> Logout</button>
                                 </form>
                             </div>
                         </div>
                     @else
                         <div class="dropdown">
-                            <button class="dropbtn"><i class="fa-solid fa-user-large"></i> Account</button>
+                            <button class="dropbtn"><span><i class="fa-solid fa-user-large"></i></span> Account</button>
                             <div class="dropdown-content">
-                                <a href="/login"><i class="fa-solid fa-arrow-right-to-bracket"></i> Login</a>
-                                <a href="/register"><i class="fa-solid fa-user-plus"></i> Register</a>
+                                <a href="/login"><span><i class="fa-solid fa-arrow-right-to-bracket"></i></span> Login</a>
+                                <a href="/register"><span><i class="fa-solid fa-user-plus"></i></span> Register</a>
                             </div>
                         </div>
                     @endif
@@ -68,14 +68,14 @@
 
     <div class="sidenav">
         <p><span><i class="fa-solid fa-microchip"></i></span> PC Components</p>
-        <a href=""><span><i class="fa-solid fa-chevron-right"></i></span> PC Cases</a>
-        <a href=""><span><i class="fa-solid fa-chevron-right"></i></span> Processors</a>
-        <a href=""><span><i class="fa-solid fa-chevron-right"></i></span> Graphics Cards</a>
-        <a href=""><span><i class="fa-solid fa-chevron-right"></i></span> Motherboards</a>
-        <a href=""><span><i class="fa-solid fa-chevron-right"></i></span> Processor Coolers</a>
-        <a href=""><span><i class="fa-solid fa-chevron-right"></i></span> Ram</a>
-        <a href=""><span><i class="fa-solid fa-chevron-right"></i></span> Storage</a>
-        <a href=""><span><i class="fa-solid fa-chevron-right"></i></span> Power Suplys</a>
+        <a href="/admin/pccases/create"><span><i class="fa-solid fa-chevron-right"></i></span> PC Cases</a>
+        <a href="/admin/processor/create"><span><i class="fa-solid fa-chevron-right"></i></span> Processors</a>
+        <a href="/admin/graphicscard/create"><span><i class="fa-solid fa-chevron-right"></i></span> Graphics Cards</a>
+        <a href="/admin/motherboard/create"><span><i class="fa-solid fa-chevron-right"></i></span> Motherboards</a>
+        <a href="/admin/processorcooler/create"><span><i class="fa-solid fa-chevron-right"></i></span> Processor Coolers</a>
+        <a href="/admin/ram/create"><span><i class="fa-solid fa-chevron-right"></i></span> Ram</a>
+        <a href="/admin/storage/create"><span><i class="fa-solid fa-chevron-right"></i></span> Storage</a>
+        <a href="/admin/psu/create"><span><i class="fa-solid fa-chevron-right"></i></span> Power Suplys</a>
         <hr>
         <p><span><i class="fa-solid fa-computer"></i></span> Gaming PCs</p>
         <a href="/computer/create"><span><i class="fa-solid fa-plus"></i></span> Create PC</a>

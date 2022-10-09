@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Motherboard extends Model
 {
     use HasFactory;
+    protected $guarded = [];
+    
     public function computers()
     {
         return $this->hasMany(Computer::class);

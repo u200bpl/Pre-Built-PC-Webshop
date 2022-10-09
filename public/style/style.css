@@ -64,6 +64,10 @@ nav {
     z-index: 999;
 }
 
+nav span {
+    color: var(--main-color);
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
