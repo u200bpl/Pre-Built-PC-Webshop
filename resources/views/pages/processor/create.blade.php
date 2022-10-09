@@ -4,7 +4,7 @@
 
 <div class="wrapper">
     <div class="create-form">
-        <h1>Add new processor</h1>
+        <h1>Add new Processor</h1>
         @if($errors->any())
             <div class="alert-danger">
                 <ul>
@@ -35,7 +35,7 @@
             </div>
 
             <div class="form-group">
-                <button type="submit">Add PC Case</button>
+                <button type="submit">Add Processor</button>
             </div>
         </form>
     </div>
