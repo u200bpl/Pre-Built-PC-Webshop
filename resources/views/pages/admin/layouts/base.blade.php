@@ -33,7 +33,7 @@
                 </div>
                 
                 <div class="nav-right">
-                    <a href="/cart"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+                    <a href="/cart"><span><i class="fa-solid fa-cart-shopping"></i></span> Cart</a>
                     @if (Auth::check())
                         <div class="dropdown">
                             <button class="dropbtn"><span><i class="fa-solid fa-user-large"></i></span> {{ Auth::user()->first_name }}</button>
@@ -68,7 +68,7 @@
 
     <div class="sidenav">
         <p><span><i class="fa-solid fa-microchip"></i></span> PC Components</p>
-        <a href="/admin/pccases/create"><span><i class="fa-solid fa-chevron-right"></i></span> PC Cases</a>
+        <a href="/admin/pccase/create"><span><i class="fa-solid fa-chevron-right"></i></span> PC Cases</a>
         <a href="/admin/processor/create"><span><i class="fa-solid fa-chevron-right"></i></span> Processors</a>
         <a href="/admin/graphicscard/create"><span><i class="fa-solid fa-chevron-right"></i></span> Graphics Cards</a>
         <a href="/admin/motherboard/create"><span><i class="fa-solid fa-chevron-right"></i></span> Motherboards</a>

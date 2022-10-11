@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="detail-components">
-                    <button><b>Add to card</b> - €{{$computer->price}}</button>
+                    <a href=""><b>Add to card</b> - €{{$computer->price}}</a>
                 </div>
             </div>
         </div>

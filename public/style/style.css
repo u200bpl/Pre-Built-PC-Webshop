@@ -447,16 +447,18 @@ hr {
     display: block;
 }
 
-.detail-components button {
+.detail-components {
+    margin-top: 10px;
+}
+
+.detail-components a {
     cursor: pointer;
-    margin: 10px 0;
     padding: 10px;
     background-color: var(--main-color);
     border: none;
     color: var(--black);
     font-family: var(--main-font2);
     font-size: 15px;
-    width: 100%;
 }
 
 .detail-header {

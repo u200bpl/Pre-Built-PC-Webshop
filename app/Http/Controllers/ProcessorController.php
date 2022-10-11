@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Processor;
+use App\Models\Computer;
 
 class ProcessorController extends Controller
 {
@@ -26,7 +27,7 @@ class ProcessorController extends Controller
     {
         return view('pages.processor.create', [
             'computers' => Computer::all(),
-            'pccases' => Processor::all(),
+            'processors' => Processor::all(),
         ]);
     }
 
@@ -44,7 +45,7 @@ class ProcessorController extends Controller
             'price' => 'numeric|min:0',
         ]);
 
-        Computer::create($request->except('_token'));
+        Processor::create($request->except('_token'));
         return redirect()->route('admin.index');
     }
 

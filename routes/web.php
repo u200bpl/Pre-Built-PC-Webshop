@@ -4,10 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ComputerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\PccasesController;
+use App\Http\Controllers\PccaseController;
 use App\Http\Controllers\ProcessorController;
-use App\Models\Computer;
-use App\Models\Processor;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,11 +31,11 @@ Route::middleware(['web', 'isAdmin'])->group(function () {
     Route::post('/admin/computer', [ComputerController::class, 'store'])->name("pages.admin.computer.store");
     Route::delete('/admin/computer/{id}', [ComputerController::class, 'destroy'])->name('pages.admin.computer.destroy');
 
-    Route::get('/admin/pccases/create', [PccasesController::class, 'create']);
-    Route::post('/admin', [PccasesController::class, 'store'])->name("pages.pccases.store");
+    Route::get('/admin/pccase/create', [PccaseController::class, 'create']);
+    Route::post('/admin', [PccaseController::class, 'store'])->name("pages.pccase.store");
 
-    Route::get('/admin/processor/create', [PccasesController::class, 'create']);
-    Route::post('/admin', [PccasesController::class, 'store'])->name("pages.processor.store");
+    Route::get('/admin/processor/create', [ProcessorController::class, 'create']);
+    Route::post('/admin', [ProcessorController::class, 'store'])->name("pages.processor.store");
 });
 
 require __DIR__.'/auth.php';

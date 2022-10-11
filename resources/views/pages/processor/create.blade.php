@@ -14,7 +14,7 @@
                 </ul>
             </div>
         @endif
-        <form action="{{route('pages.pccases.store')}}" method="POST">
+        <form action="{{route('pages.processor.store')}}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="name">Name</label>

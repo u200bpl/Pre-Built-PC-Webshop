@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pccase;
 use App\Models\Computer;
-use App\Models\Processor;
 
-class PccasesController extends Controller
+class PccaseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,9 +25,9 @@ class PccasesController extends Controller
      */
     public function create()
     {
-        return view('pages.pccases.create', [
+        return view('pages.pccase.create', [
             'computers' => Computer::all(),
-            'pccases' => Processor::all(),
+            'pccases' => Pccase::all(),
         ]);
     }
 
@@ -45,7 +45,7 @@ class PccasesController extends Controller
             'price' => 'numeric|min:0',
         ]);
 
-        Processor::create($request->except('_token'));
+        Pccase::create($request->except('_token'));
         return redirect()->route('admin.index');
     }
 

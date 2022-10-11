@@ -4,7 +4,7 @@
 
 <div class="wrapper">
     <div class="create-form">
-        <h1>Add new pccase</h1>
+        <h1>Add new PC Case</h1>
         @if($errors->any())
             <div class="alert-danger">
                 <ul>
@@ -14,7 +14,7 @@
                 </ul>
             </div>
         @endif
-        <form action="{{route('pages.processor.store')}}" method="POST">
+        <form action="{{route('pages.pccase.store')}}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="name">Name</label>
