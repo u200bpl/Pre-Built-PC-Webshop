@@ -23,19 +23,8 @@ Route::get('/', [DashboardController::class, 'index'])->name("dashboard");
 Route::get('/computer', [ComputerController::class, 'index'])->name("computers.index");
 
 Route::middleware(['web', 'isAdmin'])->group(function () {
-    Route::get('/admin', [AdminController::class, 'index'])->name("admin.index");
-
-    Route::get('/computer/create', [ComputerController::class, 'create']);
-    Route::get('/computer/{id}/edit', [ComputerController::class, 'edit'])->name("pages.computer.edit");
-    Route::put('/computer/{id}/edit', [ComputerController::class, 'update'])->name("pages.computer.update");
-    Route::post('/admin/computer', [ComputerController::class, 'store'])->name("pages.admin.computer.store");
-    Route::delete('/admin/computer/{id}', [ComputerController::class, 'destroy'])->name('pages.admin.computer.destroy');
-
-    Route::get('/admin/pccase/create', [PccaseController::class, 'create']);
-    Route::post('/admin', [PccaseController::class, 'store'])->name("pages.pccase.store");
-
-    Route::get('/admin/processor/create', [ProcessorController::class, 'create']);
-    Route::post('/admin', [ProcessorController::class, 'store'])->name("pages.processor.store");
+    Route::resource('admin', AdminController::class);
+    Route::resource('computer', ComputerController::class);
 });
 
 require __DIR__.'/auth.php';
