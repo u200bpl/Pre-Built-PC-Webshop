@@ -25,6 +25,8 @@ Route::get('/computer', [ComputerController::class, 'index'])->name("computers.i
 Route::middleware(['web', 'isAdmin'])->group(function () {
     Route::resource('admin', AdminController::class);
     Route::resource('computer', ComputerController::class);
+    Route::resource('pccase', PccaseController::class);
+    Route::resource('processor', ProcessorController::class);
 });
 
 require __DIR__.'/auth.php';

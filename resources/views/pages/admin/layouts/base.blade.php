@@ -68,14 +68,14 @@
 
     <div class="sidenav">
         <p><span><i class="fa-solid fa-microchip"></i></span> PC Components</p>
-        <a href="/admin/pccase/create"><span><i class="fa-solid fa-chevron-right"></i></span> PC Cases</a>
-        <a href="/admin/processor/create"><span><i class="fa-solid fa-chevron-right"></i></span> Processors</a>
-        <a href="/admin/graphicscard/create"><span><i class="fa-solid fa-chevron-right"></i></span> Graphics Cards</a>
-        <a href="/admin/motherboard/create"><span><i class="fa-solid fa-chevron-right"></i></span> Motherboards</a>
-        <a href="/admin/processorcooler/create"><span><i class="fa-solid fa-chevron-right"></i></span> Processor Coolers</a>
-        <a href="/admin/ram/create"><span><i class="fa-solid fa-chevron-right"></i></span> Ram</a>
-        <a href="/admin/storage/create"><span><i class="fa-solid fa-chevron-right"></i></span> Storage</a>
-        <a href="/admin/psu/create"><span><i class="fa-solid fa-chevron-right"></i></span> Power Suplys</a>
+        <a href="/pccase/create"><span><i class="fa-solid fa-chevron-right"></i></span> PC Cases</a>
+        <a href="/processor/create"><span><i class="fa-solid fa-chevron-right"></i></span> Processors</a>
+        <a href="/graphicscard/create"><span><i class="fa-solid fa-chevron-right"></i></span> Graphics Cards</a>
+        <a href="/motherboard/create"><span><i class="fa-solid fa-chevron-right"></i></span> Motherboards</a>
+        <a href="/processorcooler/create"><span><i class="fa-solid fa-chevron-right"></i></span> Processor Coolers</a>
+        <a href="/ram/create"><span><i class="fa-solid fa-chevron-right"></i></span> Ram</a>
+        <a href="/storage/create"><span><i class="fa-solid fa-chevron-right"></i></span> Storage</a>
+        <a href="/psu/create"><span><i class="fa-solid fa-chevron-right"></i></span> Power Suplys</a>
         <hr>
         <p><span><i class="fa-solid fa-computer"></i></span> Gaming PCs</p>
         <a href="/computer/create"><span><i class="fa-solid fa-plus"></i></span> Create PC</a>

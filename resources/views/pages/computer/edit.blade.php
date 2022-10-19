@@ -14,7 +14,7 @@
                 </ul>
             </div>
         @endif
-        <form action="{{route('pages.computer.update', $computer->id)}}" method="POST">
+        <form action="{{route('computer.update', $computer->id)}}" method="POST">
             @method("PUT")
             @csrf
             <div class="form-group">
