@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Pccase;
+use App\Models\Cpucooler;
 use App\Models\Computer;
 
-class PccaseController extends Controller
+class CpucoolerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,9 +25,9 @@ class PccaseController extends Controller
      */
     public function create()
     {
-        return view('pages.pccase.create', [
+        return view('pages.cpucooler.create', [
             'computers' => Computer::all(),
-            'pccases' => Pccase::all(),
+            'cpucooler' => Cpucooler::all(),
         ]);
     }
 
@@ -49,10 +49,10 @@ class PccaseController extends Controller
         if ($request->hasFile('img')) {
             $file = $request->file('img');
             $fileName = $file->getClientOriginalName();
-            $filePath = $file->storeAs('public/img/pccase', $fileName);
+            $filePath = $file->storeAs('public/img/cpucooler', $fileName);
             $img = $fileName;
         }
-        Pccase::create([
+        Cpucooler::create([
             'name' => $request->name,
             'description' => $request->description,
             'img' => $img,

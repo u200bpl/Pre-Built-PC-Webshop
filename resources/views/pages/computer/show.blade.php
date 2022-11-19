@@ -33,21 +33,62 @@
 
                 <button class="accordion"><b>Computer Specifactions</b></button>
                 <div class="panel">
-                    <p><b>Case:</b> {{$computer->pccase->name}}</p>
-                    <p><b>CPU:</b> {{$computer->processor->name}}</p>
-                    <p><b>GPU:</b> {{$computer->graphicscard->name}}</p>
-                    <p><b>Motherboard:</b> {{$computer->motherboard->name}}</p>
-                    <p><b>CPU Cooler:</b> {{$computer->cpucooler->name}}</p>
-                    <p><b>RAM:</b> {{$computer->ram->name}}</p>
-                    <p><b>Storage:</b> {{$computer->storage->name}}</p>
-                    <p><b>PSU:</b> {{$computer->psu->name}}</p>
-                    <p><b>OS:</b> {{$computer->os}}</p>
-                    <p><b>Warranty:</b> {{$computer->warranty}}</p>
-                </div>
-
-                <button class="accordion"><b>Warranty Information</b></button>
-                <div class="panel">
-                    <p>Warranty Information</p>
+                    <div class="pc-info">
+                        <div class="pc-spec">
+                            <img src="{{asset('storage/img/pccase/' . $computer->pccase->img)}}" alt="{{$computer->pccase->name}} Computer img">
+                            <div class="pc-spec-info">
+                                <p><b>Case:</b> {{$computer->pccase->name}}</p>
+                            </div>
+                        </div>
+                        <div class="pc-spec">
+                            <img src="{{asset('storage/img/processor/' . $computer->processor->img)}}" alt="{{$computer->processor->name}} Computer img">
+                            <div class="pc-spec-info">
+                                <p><b>CPU:</b> {{$computer->processor->name}}</p>
+                            </div>
+                        </div>
+                        <div class="pc-spec">
+                            <img src="{{asset('storage/img/graphicscard/' . $computer->graphicscard->img)}}" alt="{{$computer->graphicscard->name}} Computer img">
+                            <div class="pc-spec-info">
+                                <p><b>GPU:</b> {{$computer->graphicscard->name}}</p>
+                            </div>
+                        </div>
+                        <div class="pc-spec">
+                            <img src="{{asset('storage/img/motherboard/' . $computer->motherboard->img)}}" alt="{{$computer->motherboard->name}} Computer img">
+                            <div class="pc-spec-info">
+                                <p><b>Motherboard:</b> {{$computer->motherboard->name}}</p>
+                            </div>
+                        </div>
+                        <div class="pc-spec">
+                            <img src="{{asset('storage/img/cpucooler/' . $computer->cpucooler->img)}}" alt="{{$computer->cpucooler->name}} Computer img">
+                            <div class="pc-spec-info">
+                                <p><b>CPU Cooler:</b> {{$computer->cpucooler->name}}</p>
+                            </div>
+                        </div>
+                        <div class="pc-spec">
+                            <img src="{{asset('storage/img/ram/' . $computer->ram->img)}}" alt="{{$computer->ram->name}} Computer img">
+                            <div class="pc-spec-info">
+                                <p><b>RAM:</b> {{$computer->ram->name}}</p>
+                            </div>
+                        </div>
+                        <div class="pc-spec">
+                            <img src="{{asset('storage/img/storage/' . $computer->storage->img)}}" alt="{{$computer->storage->name}} Computer img">
+                            <div class="pc-spec-info">
+                                <p><b>Storage:</b> {{$computer->storage->name}}</p>
+                            </div>
+                        </div>
+                        <div class="pc-spec">
+                            <img src="{{asset('storage/img/psu/' . $computer->psu->img)}}" alt="{{$computer->psu->name}} Computer img">
+                            <div class="pc-spec-info">
+                                <p><b>PSU:</b> {{$computer->psu->name}}</p>
+                            </div>
+                        </div>
+                        <div class="pc-spec">
+                            <img src="{{asset('storage/img/os/windows-11-pro.png')}}">
+                            <div class="pc-spec-info">
+                                <p><b>OS:</b> {{$computer->os}}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="detail-components">

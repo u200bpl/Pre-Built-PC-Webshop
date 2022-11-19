@@ -2,7 +2,7 @@
 
     @section('content')
 
-<section class="">
+<section>
     <div class="card-section-header">
         <h2>Admin Section</h2>
     </div>
@@ -12,21 +12,21 @@
             <div class="stats-container pending">
                 <div class="stats-text">
                     <h4><i class="fa-solid fa-tags"></i> Pending Orders:</h4>
-                    <p>{{ $orders->where('status','=','pending')->count() }}</p>
+                    <p>{{ $orders->where('order_status','=','pending')->count() }}</p>
                 </div>
             </div>
 
             <div class="stats-container processing">
                 <div class="stats-text">
                     <h4><i class="fa-solid fa-tags"></i> Processing Orders:</h4>
-                    <p>{{ $orders->where('status','=','processing')->count() }}</p>
+                    <p>{{ $orders->where('order_status','=','processing')->count() }}</p>
                 </div>
             </div>
 
             <div class="stats-container completed">
                 <div class="stats-text">
                     <h4><i class="fa-solid fa-tags"></i> Completed Orders:</h4>
-                    <p>{{ $orders->where('status','=','completed')->count() }}</p>
+                    <p>{{ $orders->where('order_status','=','completed')->count() }}</p>
                 </div>
             </div>
 
@@ -57,7 +57,33 @@
 
                     @foreach ($orders as $order)
                         <tr>
-                            <td><a href="">{{ $order->order_number }}</a></td>
+                            <td><button onclick="myFunction()" class="dropbtn">{{ $order->order_number }}</button></td>
+                            <section id="order-info-section" class="order-info-section">
+                                <div class="wrapper">
+                                    <div class="order-info">
+                                        <h2>Order: {{ $order->order_number }}</h2>
+                                        <p>User: {{$order->user->first_name}} {{$order->user->last_name}}</p>
+                                        <p>email: {{$order->user->email}}</p>
+                                        <p>phonenumber: {{$order->user->phonenumber}}</p>
+                                        <p>Address: {{$order->user->address}}</p>
+                                        <p>City: {{$order->user->city}}<p>
+                                        <p>State: {{$order->user->state}}<p>
+                                        <p>Country: {{$order->user->country}}<p>
+                                        <p>Zip Code: {{$order->user->zip_code}}<p>
+                                        <hr>
+                                        <h2>PC Name: {{$order->computer->name}}</h2>
+                                        <p>{{$order->computer->pccase->name}}</p>
+                                        <p>{{$order->computer->processor->name}}</p>
+                                        <p>{{$order->computer->graphicscard->name}}</p>
+                                        <p>{{$order->computer->motherboard->name}}</p>
+                                        <p>{{$order->computer->cpucooler->name}}</p>
+                                        <p>{{$order->computer->ram->name}}</p>
+                                        <p>{{$order->computer->storage->name}}</p>
+                                        <p>{{$order->computer->psu->name}}</p>
+                                        <p>{{$order->computer->os}}</p>
+                                    </div>
+                                </div>
+                            </section>
                             <td>{{ $order->user->first_name }} {{ $order->user->last_name }}</td>
                             <td><a href="/computer/{{ $order->computer->id }}">{{ $order->computer->name }}</a></td>
                             <td>{{ $order->status }}</td>

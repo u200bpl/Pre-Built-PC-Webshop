@@ -42,10 +42,22 @@ class ProcessorController extends Controller
         $request->validate([
             'name' => 'required|max:255|min:3|unique:computers',
             'description' => 'required',
+            'img' => 'nullable|mimes:png|max:2048',
             'price' => 'numeric|min:0',
         ]);
-
-        Processor::create($request->except('_token'));
+        $img = null;
+        if ($request->hasFile('img')) {
+            $file = $request->file('img');
+            $fileName = $file->getClientOriginalName();
+            $filePath = $file->storeAs('public/img/processor', $fileName);
+            $img = $fileName;
+        }
+        Processor::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'img' => $img,
+            'price' => $request->price,
+        ]);
         return redirect()->route('admin.index');
     }
 

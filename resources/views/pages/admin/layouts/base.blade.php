@@ -72,7 +72,7 @@
         <a href="/processor/create"><span><i class="fa-solid fa-chevron-right"></i></span> Processors</a>
         <a href="/graphicscard/create"><span><i class="fa-solid fa-chevron-right"></i></span> Graphics Cards</a>
         <a href="/motherboard/create"><span><i class="fa-solid fa-chevron-right"></i></span> Motherboards</a>
-        <a href="/processorcooler/create"><span><i class="fa-solid fa-chevron-right"></i></span> Processor Coolers</a>
+        <a href="/cpucooler/create"><span><i class="fa-solid fa-chevron-right"></i></span> Processor Coolers</a>
         <a href="/ram/create"><span><i class="fa-solid fa-chevron-right"></i></span> Ram</a>
         <a href="/storage/create"><span><i class="fa-solid fa-chevron-right"></i></span> Storage</a>
         <a href="/psu/create"><span><i class="fa-solid fa-chevron-right"></i></span> Power Suplys</a>

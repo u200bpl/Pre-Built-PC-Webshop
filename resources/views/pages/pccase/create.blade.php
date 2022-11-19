@@ -14,7 +14,7 @@
                 </ul>
             </div>
         @endif
-        <form action="{{route('pccase.store')}}" method="POST">
+        <form action="{{route('pccase.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="name">Name</label>
@@ -26,6 +26,12 @@
                 <label for="description">Description</label>
                 <hr>
                 <textarea name="description" id="description" rows="1" cols="50" placeholder="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat ducimus odio nulla voluptas, quidem, rerum illum nisi error minus blanditiis laudantium. Nostrum amet ex quasi?"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="img">Image</label>
+                <hr>
+                <input type="file" accept=".png" name="img" id="img">
             </div>
 
             <div class="form-group">

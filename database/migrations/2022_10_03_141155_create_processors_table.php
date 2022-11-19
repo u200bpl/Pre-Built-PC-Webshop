@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('processors', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
+            $table->string('img')->nullable();
             $table->string('description')->nullable();
             $table->float('price')->nullable();
             $table->timestamps();

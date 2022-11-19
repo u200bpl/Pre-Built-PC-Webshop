@@ -3,7 +3,7 @@
 
 <section class="hero-small">
     <div class="wrapper">
-        <div class="here-small-content">
+        <div class="hero-small-content">
             <div class="hero-small-text">
                 <h2>Gaming PC's</h2>
                 <p>Find your <span>Gaming PC</span>!</p>

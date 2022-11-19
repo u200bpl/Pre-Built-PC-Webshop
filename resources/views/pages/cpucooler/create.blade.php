@@ -4,7 +4,7 @@
 
 <div class="wrapper">
     <div class="create-form">
-        <h1>Add new Processor</h1>
+        <h1>Add new Processor Cooler</h1>
         @if($errors->any())
             <div class="alert-danger">
                 <ul>
@@ -14,7 +14,7 @@
                 </ul>
             </div>
         @endif
-        <form action="{{route('processor.store')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{route('cpucooler.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="name">Name</label>
@@ -41,7 +41,7 @@
             </div>
 
             <div class="form-group">
-                <button type="submit">Add Processor</button>
+                <button type="submit">Add Processor Cooler</button>
             </div>
         </form>
     </div>

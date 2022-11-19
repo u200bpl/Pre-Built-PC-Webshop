@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('order_number')->nullable();
             $table->foreignId('user_id')->references('id')->on('users');
             $table->foreignId('computer_id')->references('id')->on('computers');
-            $table->enum('status', ['pending', 'processing', 'completed', 'cancelled'])->default('pending');
+            $table->enum('order_status', ['pending', 'building', 'testing', 'completed', 'cancelled'])->default('pending');
             $table->timestamps();
         });
     }

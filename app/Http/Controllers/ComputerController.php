@@ -78,11 +78,11 @@ class ComputerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Computer $computer)
+    public function show(Computer $id)
     {
         return view('pages.computer.show', [
             'computers' => Computer::all(),
-            'computer' => $computer
+            'computer' => $id,
         ]);
     }
 
